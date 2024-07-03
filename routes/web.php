@@ -23,7 +23,11 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('welcome');
+
+Route::get('/About', function () {
+    return Inertia::render('About');
+})->name('About');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
